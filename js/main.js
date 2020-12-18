@@ -21,3 +21,30 @@ menuBtn.addEventListener("click", () => {
         menuOpen = false;
     }
 });
+
+
+// What page we're in? Check
+console.log("current page: ", document.querySelector("body").id);
+const pageId = document.querySelector("body").id;
+
+if (typeof(pageId) != 'undefined' && pageId != null) {
+    //const nbCurrentItem1 = document.querySelector("item");
+    if (pageId == "ana-sayfa") {
+        console.log("ana sayfa");
+        let nbItem = document.querySelectorAll(".item1");
+        nbItem[0].classList.add("currentpage");
+        nbItem[1].classList.add("currentpage");
+    } else if (pageId == "saglik-rehberi") {
+        console.log("saglik-rehberi");
+        let nbItem = document.querySelectorAll(".item2");
+        nbItem[0].classList.add("currentpage");
+        nbItem[1].classList.add("currentpage");
+    } else if (pageId == "bki") {
+        console.log("bki");
+        let nbItem = document.querySelectorAll(".item3");
+        nbItem[0].classList.add("currentpage");
+        nbItem[1].classList.add("currentpage");
+    }
+
+
+}
