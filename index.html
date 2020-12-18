@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Doğa Proje</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/anasayfa.css">
 </head>
 
 <body id="ana-sayfa">
@@ -37,14 +38,27 @@
 
         <div class="main-container">
             <div class="content">
+
                 <div class="bki-hesapla">
                     <p class="bki-title">Beden Kütle İndeksi Hesaplama</p>
+                    <div class="form__group field">
+                        <!--
+                        <input type="input" class="weight form__field" placeholder="Kilo (kg)" id='name' required />
+                        <label for="name" class="form__label">Name</label>
+                        <br>
+                        <input type="input" class="length form__field" placeholder="Boy (cm)" id='name' required />
+                        <label for="name" class="form__label">Name</label>
+                        -->
+                    </div>
                     <input class="weight" type="text" placeholder="Kilo (kg)" pattern="[0-9]{5}">
                     <input class="length" type="text" placeholder="Boy (cm)" pattern="[0-9]{5}">
+                    <br>
                     <button type="button">Hesapla</button>
                     <br>
-                    <p>Sonuç için Hesapla butonuna basın</p>
+                    <p class="bki-sonuc">Sonuç için Hesapla butonuna basın</p>
+
                 </div>
+
             </div>
         </div>
     </div>

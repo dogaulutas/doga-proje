@@ -195,14 +195,6 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.bki-hesapla {
-    text-align: center;
-}
-
-.bki-title {
-    font-size: 32px;
-}
-
 
 /* RESPONSIVE */
 
@@ -212,11 +204,5 @@ body {
     }
     .navigation-bar .menu-btn {
         display: flex;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .bki-title {
-        font-size: 26px;
     }
 }
