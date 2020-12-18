@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+:root {
+    --color1: #f6f6f6;
+    --color2: #b0d6d6;
+    --color3: #161313;
+    --color4: #546d86;
+    --smoky-black: #14110fff;
+    --jet: #34312dff;
+    --gray-web: #7e7f83ff;
+    --almond: #d9c5b2ff;
+    --cultured: #f3f3f4ff;
+    /* doğa */
+    --paradise-pink: #ef476fff;
+    --caribbean-green: #06d6a0ff;
+    --mindaro: #d6ff79ff;
+    --vivid-burgundy: #af1b3fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+}
+
+body {
+    background-color: var(--color1);
+    display: block;
+    /*justify-content: ;*/
+    /*align-items: center;*/
+    /*min-height: 100vh;*/
+    height: 100%;
+}
+
+.navigation-bar {
+    font-family: "Montserrat";
+    /*display: flex;*/
+    display: block;
+    width: 100%;
+    height: 80px;
+    background-color: var(--vivid-burgundy);
+}
+
+.navigation-bar li {
+    list-style: none;
+    float: left;
+}
+
+.navigation-bar a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: var(--smoky-black);
+    padding: 30px 25px;
+    font-size: 20px;
+}
+
+.navigation-bar .logo {
+    float: left;
+}
+
+.navigation-bar .logo a {
+    padding: 20px 35px;
+    font-size: 30px;
+}
+
+.navigation-bar .item {
+    transition: .3s;
+}
+
+.navigation-bar .item:hover {
+    background-color: var(--caribbean-green);
+}
+
+
+/* HAMBURGER MENU BUTTON */
+
+.menu-btn {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    padding: 20px 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    /* border: 3px solid #eee; */
+}
+
+.menu-btn__burger {
+    width: 40px;
+    height: 6px;
+    background: var(--color3);
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 6px;
+    background: var(--color3);
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-14px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(14px);
+}
+
+
+/* Animations */
+
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+
+/* HAMBURGER MENU BUTTON END */
+
+.navbar-content {
+    font-family: "Montserrat";
+    margin: 0;
+    overflow: hidden;
+    /*display: flex;*/
+    display: block;
+    background-color: var(--mindaro);
+    width: 100%;
+}
+
+.navbar-content li {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    padding: 2px;
+}
+
+.navbar-content li a {
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    color: var(--smoky-black);
+    font-size: 20px;
+}
+
+.navbar-content.shown {
+    max-height: 500px;
+    transition: max-height .5s ease-out;
+    overflow: hidden;
+}
+
+.navbar-content.hidden {
+    max-height: 0px;
+    transition: max-height .3s ease-out;
+    overflow: hidden;
+}
+
+.main-container .content {
+    font-size: 20px;
+    margin: 20px;
+    /* align-self: center; */
+}
+
+.bki {
+    text-align: center;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+    .navigation-bar .item {
+        display: none;
+    }
+    .navigation-bar .menu-btn {
+        display: flex;
+    }
+}
