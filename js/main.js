@@ -45,6 +45,4 @@ if (typeof(pageId) != 'undefined' && pageId != null) {
         nbItem[0].classList.add("currentpage");
         nbItem[1].classList.add("currentpage");
     }
-
-
 }

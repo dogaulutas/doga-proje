@@ -8,6 +8,7 @@
     <title>Doğa Proje</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/anasayfa.css">
+    <link rel="stylesheet" href="./css/saglikrehberi.css">
 </head>
 
 <body id="ana-sayfa">
@@ -42,21 +43,167 @@
                 <div class="bki-hesapla">
                     <p class="bki-title">Beden Kütle İndeksi Hesaplama</p>
                     <div class="form__group field">
-                        <!--
-                        <input type="input" class="weight form__field" placeholder="Kilo (kg)" id='name' required />
-                        <label for="name" class="form__label">Name</label>
-                        <br>
-                        <input type="input" class="length form__field" placeholder="Boy (cm)" id='name' required />
-                        <label for="name" class="form__label">Name</label>
-                        -->
                     </div>
                     <input class="weight" type="text" placeholder="Kilo (kg)" pattern="[0-9]{5}">
                     <input class="length" type="text" placeholder="Boy (cm)" pattern="[0-9]{5}">
                     <br>
-                    <button type="button">Hesapla</button>
                     <br>
-                    <p class="bki-sonuc">Sonuç için Hesapla butonuna basın</p>
+                    <a class='bki-button' href='#'>Hesapla</a>
+                    <br>
+                    <p class="bki-sonuc" id="bki-sonuc"></p>
+                </div>
 
+                <ol class="articles thereisopened">
+                    <li class="articles__article aa_open" style="--animation-order:1">
+                        <a class="articles__link" onclick="openArticle(articles, articleNodes, 0);">
+                            <div class="articles__content articles__content--lhs">
+                                <h2 class="articles__title">Neden kilo veremiyorum?</h2>
+                                <div class="articles__footer">
+                                    <p>Sağlık</p><time>19 Aralık 2020</time></div>
+                            </div>
+                            <div class="articles__content articles__content--rhs" aria-hidden="true">
+                                <h2 class="articles__title">Neden kilo veremiyorum?</h2>
+                                <div class="articles__footer">
+                                    <p>Sağlık</p><time>19 Aralık 2020</time></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="articles__article" style="--animation-order:2">
+                        <a class="articles__link" onclick="openArticle(articles, articleNodes, 1);">
+                            <div class="articles__content articles__content--lhs">
+                                <h2 class="articles__title">Yeterli su ve sıvı tüketiminin önemi</h2>
+                                <div class="articles__footer">
+                                    <p>Sağlık</p><time>19 Aralık 2020</time></div>
+                            </div>
+                            <div class="articles__content articles__content--rhs" aria-hidden="true">
+                                <h2 class="articles__title">Yeterli su ve sıvı tüketiminin önemi</h2>
+                                <div class="articles__footer">
+                                    <p>Sağlık</p><time>19 Aralık 2020</time></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="articles__article" style="--animation-order:3">
+                        <a class="articles__link" onclick="openArticle(articles, articleNodes, 2);">
+                            <div class="articles__content articles__content--lhs">
+                                <h2 class="articles__title">Süt ve ürünleri tüketiminin önemi</h2>
+                                <div class="articles__footer">
+                                    <p>Sağlık</p><time>19 Aralık 2020</time></div>
+                            </div>
+                            <div class="articles__content articles__content--rhs" aria-hidden="true">
+                                <h2 class="articles__title">Süt ve ürünleri tüketiminin önemi</h2>
+                                <div class="articles__footer">
+                                    <p>Sağlık</p><time>19 Aralık 2020</time></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="articles__article" style="--animation-order:4">
+                        <a class="articles__link" onclick="openArticle(articles, articleNodes, 3);">
+                            <div class="articles__content articles__content--lhs">
+                                <h2 class="articles__title">İçeceklerin günlük tüketim miktarları</h2>
+                                <div class="articles__footer">
+                                    <p>Sağlık</p><time>19 Aralık 2020</time></div>
+                            </div>
+                            <div class="articles__content articles__content--rhs" aria-hidden="true">
+                                <h2 class="articles__title">İçeceklerin günlük tüketim miktarları</h2>
+                                <div class="articles__footer">
+                                    <p>Sağlık</p><time>19 Aralık 2020</time></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="articles__article" style="--animation-order:5">
+                        <a class="articles__link" onclick="openArticle(articles, articleNodes, 4);">
+                            <div class="articles__content articles__content--lhs">
+                                <h2 class="articles__title">Obezite görülme sıklığının artmasının nedenleri</h2>
+                                <div class="articles__footer">
+                                    <p>Sağlık</p><time>19 Aralık 2020</time></div>
+                            </div>
+                            <div class="articles__content articles__content--rhs" aria-hidden="true">
+                                <h2 class="articles__title">Obezite görülme sıklığının artmasının nedenleri</h2>
+                                <div class="articles__footer">
+                                    <p>Sağlık</p><time>19 Aralık 2020</time></div>
+                            </div>
+                        </a>
+                    </li>
+                </ol>
+                <div class="articles-modals">
+                    <div class="article-modal">
+                        <div class="am-header">
+                            <h4>Neden kilo veremiyorum?</h4>
+                            <span class="am-close">&times;</span>
+                        </div>
+                        <div class="am-body">
+                            <p>
+                                1.Yeteri kadar egzersiz yapmamak <br> 2.Uyku eksikliği çekmek <br> 3.Çok fazla kalori almak<br> 4.Çok fazla stres yapmak<br> 5.Hızlı kilo vermeye çalışmak<br> 6.Hafta sonu kaçamakları yapmak<br>7.Yeteri kadar su içmiyorsanız<br>                                8.Kan değerlerine baktırmamak <br>9.Vücut analizini yaptırmamak <br> <br> Kaynakça: <br> http://dengelihayat.com.tr/wp-content/uploads/2016/11/<br>NEDEN-K%C4%B0LO-VEREM%C4%B0YORUM.pdf
+                                <br> https://www.sozcu.com.tr/2016/yazarlar/taylan-kumeli/neden-kilo-veremiyorum-diyorsaniz-1338105/
+                            </p>
+                        </div>
+                        <div class="am-footer">
+                            <p>Sağlık</p>
+                        </div>
+                    </div>
+                    <div class="article-modal">
+                        <div class="am-header">
+                            <h4>Yeterli su ve sıvı tüketiminin önemi</h4>
+                            <span class="am-close">&times;</span>
+                        </div>
+                        <div class="am-body">
+                            <p>
+                                Su ve diğer içecekler; yiyeceklerimizin sindirimi, emilimi ve hücrelere taşınması, yaşam ve sağlık için gerekli biyokimyasal tepkilerin oluşması, hücrelerin, dokuların organ ve sistemlerin çalışması, metabolizma sonucu oluşan zararlı maddelerin taşınması
+                                ve atılması, vücut ısısının denetiminin ve eklemlerin kayganlığının sağlanmasında rol oynar. Bütün bunların yanında kalsiyum, magnezyum ve flor gibi temel mineralleri de sağlar. Aşırı su kaybı tehlikelidir.Vücuttan %10
+                                su kaybı ölüme neden olabilir.
+                                <br> <br> Kaynakça: <br>https://hsgm.saglik.gov.tr/depo/birimler/saglikli-beslenme-hareketli-hayat-db/Turkiye_Beslenme_Rehberi_TUBER_18_04_2019.pdf
+                            </p>
+                        </div>
+                        <div class="am-footer">
+                            <p>Sağlık</p>
+                        </div>
+                    </div>
+                    <div class="article-modal">
+                        <div class="am-header">
+                            <h4>Süt ve ürünleri tüketiminin önemi</h4>
+                            <span class="am-close">&times;</span>
+                        </div>
+                        <div class="am-body">
+                            <p>
+                                Tüm yaş gruplarının süt ve ürünlerini her gün tüketmesi gerekir. Süt ve ürünleri grubunda yer alan yiyecekler, kalsiyumdan zengin olmaları nedeniyle çocuklarda kemiklerin ve dişlerin sağlıklı gelişmesi,yetişkinlerde ise kalp-damar hastalıkları, inme,
+                                yüksek tansiyon, Tip II diyabet, osteoporoz, kolon kanserinden korunmada ve vücut ağırlığının yönetiminde önemlidir.
+                                <br> <br> Kaynakça: <br>https://hsgm.saglik.gov.tr/depo/birimler/saglikli-beslenme-hareketli-hayat-db/Turkiye_Beslenme_Rehberi_TUBER_18_04_2019.pdf
+                            </p>
+                        </div>
+                        <div class="am-footer">
+                            <p>Sağlık</p>
+                        </div>
+                    </div>
+                    <div class="article-modal">
+                        <div class="am-header">
+                            <h4>İçeceklerin günlük tüketim miktarları</h4>
+                            <span class="am-close">&times;</span>
+                        </div>
+                        <div class="am-body">
+                            <p>
+                                Fiziksel aktivite düzeyine göre günlük alınması gereken sıvı miktarı değişiklik gösterir. Orta düzeyde bir aktivite düzeyinde günlük 2-2.5 litre sıvı tüketimi önerilmektedir.<br> <br> Kaynakça: <br>https://hsgm.saglik.gov.tr/depo/birimler/saglikli-beslenme-hareketli-hayat-db/Turkiye_Beslenme_Rehberi_TUBER_18_04_2019.pdf
+                            </p>
+                        </div>
+                        <div class="am-footer">
+                            <p>Sağlık</p>
+                        </div>
+                    </div>
+                    <div class="article-modal">
+                        <div class="am-header">
+                            <h4>Obezite görülme sıklığının artmasının nedenleri</h4>
+                            <span class="am-close">&times;</span>
+                        </div>
+                        <div class="am-body">
+                            <p>
+                                Obezite görülme sıklığının artmasının nedenleri,artan teknoloji ile beraber özellikle ulaşım,tarım alanlarında kolaylaşan yaşam biçimine bağlı fiziksel aktivitede azalma ve modern yaşamdaki beslenme alışkanlıklarındaki değişimdir.Fast-food yemekler obeziteye
+                                yol açan önemli faktörlerden biridir.Cep telefonu , tablet ,televizyon vb. aletlerin kullanımı da obeziteye yol açan önemli faktörlerdir.
+                                <br> <br> Kaynakça: <br>https://www.ktu.edu.tr/dosyalar/17_02_15_bb1cf.pdf
+                            </p>
+                        </div>
+                        <div class="am-footer">
+                            <p>Sağlık</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -64,6 +211,8 @@
     </div>
 
     <script src="./js/main.js"></script>
+    <script src="./js/saglikrehberi.js"></script>
+    <script src="./js/bki.js"></script>
 
 
 </body>

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
 :root {
     --color1: #f6f6f6;
     --color2: #b0d6d6;
@@ -25,6 +27,7 @@
 }
 
 .bki-hesapla {
+    font-family: "Montserrat";
     display: block;
     text-align: center;
 }
@@ -32,17 +35,18 @@
 .bki-title {
     padding: 20px;
     font-size: 34px;
+    color: white;
 }
 
 .bki-hesapla input {
     margin: 5px;
     padding: 10px;
     width: 80px;
-    color: var(--caribbean-green);
+    color: var(--smoky-black);
     border-color: var(--vivid-burgundy);
     outline-style: none;
     border-width: thick;
-    background-color: transparent;
+    background-color: var(--color1);
     font-size: 18px;
     border-style: solid;
 }
@@ -55,106 +59,29 @@
     border-color: var(--caribbean-green);
 }
 
-.bki-hesapla button {
-    margin: 10px;
-    padding: 10px;
-    width: 120px;
-    height: 60px;
-    font-size: 20px;
-    border-color: var(--vivid-burgundy);
-    border-width: 6px;
-    border-style: solid;
-}
-
 .bki-hesapla .bki-sonuc {
     padding: 20px;
     font-size: 28px;
+    color: white;
 }
 
-
-/*
-.form__group {
-    position: relative;
-    padding: 15px 0 0;
-    margin-top: 10px;
-    width: 50%;
+.bki-button {
+    color: black;
+    font-style: normal;
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    border: 5px solid var(--vivid-burgundy);
+    transition: all 0.25s linear;
 }
 
-.form__field {
-    font-family: inherit;
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid #9b9b9b;
-    outline: 0;
-    font-size: 1.3rem;
-    color: #fff;
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
+.bki-button:hover,
+.bki-button:active {
+    background-color: var(--vivid-burgundy);
+    color: white;
 }
-
-.form__field::placeholder {
-    color: transparent;
-}
-
-.form__field:placeholder-shown~.form__label {
-    font-size: 1.3rem;
-    cursor: text;
-    top: 20px;
-}
-
-.form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: #9b9b9b;
-}
-
-.form__field:focus {
-    padding-bottom: 6px;
-    font-weight: 700;
-    border-width: 3px;
-    border-image: linear-gradient(to right, #11998e, #38ef7d);
-    border-image-slice: 1;
-}
-
-.form__field:focus~.form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: #11998e;
-    font-weight: 700;
-}
-
-
-
-.form__field:required,
-.form__field:invalid {
-    box-shadow: none;
-}
-
-*/
-
-
-/* demo */
-
-
-/*
-body {
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-size: 1.5rem;
-    background-color: #222;
-}
-*/
 
 @media screen and (max-width: 768px) {
     .bki-title {
