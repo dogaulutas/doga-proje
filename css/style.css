@@ -194,6 +194,22 @@ body {
     margin: 20px;
     /* align-self: center; */
     font-family: 'Montserrat', sans-serif;
+    min-height: 100%;
+}
+
+footer {
+    text-decoration: none;
+    text-align: center;
+    color: var(--smoky-black);
+    font-size: 20px;
+    padding: 10px;
+    bottom: 0%;
+}
+
+footer a {
+    text-align: center;
+    color: var(--smoky-black);
+    font-size: 20px;
 }
 
 
